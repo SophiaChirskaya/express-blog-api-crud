@@ -6,6 +6,9 @@ const postsRouter = require('./routers/posts');
 // Importo il middleware di gestione errore server
 const errorHandler = require("./middlewares/errorsHandler");
 
+// Importo il middleware di gestione errore not found
+const notFound = require("./middlewares/notFound");
+
 // Definizione d'uso di una cartella per i file statici
 app.use(express.static('public'));
 
@@ -21,6 +24,9 @@ app.use("/posts", postsRouter)
 
 // Utilizzo il middleware di gestione errore server
 app.use(errorHandler);
+
+// Utilizzo il middleware di gestione errore 404 not found
+app.use(notFound);
 
 
 app.listen(port, () => {
