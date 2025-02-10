@@ -4,7 +4,7 @@ const port = 3000
 const postsRouter = require('./routers/posts');
 
 // Importo il middleware di gestione errore server
-const errorHandler = require("./middlewares/errorsHandler");
+const errorsHandler = require("./middlewares/errorsHandler");
 
 // Importo il middleware di gestione errore not found
 const notFound = require("./middlewares/notFound");
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.use("/posts", postsRouter)
 
 // Utilizzo il middleware di gestione errore server
-app.use(errorHandler);
+app.use(errorsHandler);
 
 // Utilizzo il middleware di gestione errore 404 not found
 app.use(notFound);
