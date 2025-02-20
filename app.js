@@ -9,10 +9,12 @@ const errorsHandler = require("./middlewares/errorsHandler");
 // Importo il middleware di gestione errore not found
 const notFound = require("./middlewares/notFound");
 
+
 // Definizione d'uso di una cartella per i file statici
 app.use(express.static('public'));
 
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:5173/'}))
 
 // Definizone di rotta home
 app.get('/', (req, res) => {
