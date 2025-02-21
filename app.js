@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const postsRouter = require('./routers/posts');
+const cors = require("cors")
 
 // Importo il middleware di gestione errore server
 const errorsHandler = require("./middlewares/errorsHandler");
@@ -14,7 +15,7 @@ const notFound = require("./middlewares/notFound");
 app.use(express.static('public'));
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173/'}))
+app.use(cors({ origin: 'http://localhost:5173'}));
 
 // Definizone di rotta home
 app.get('/', (req, res) => {

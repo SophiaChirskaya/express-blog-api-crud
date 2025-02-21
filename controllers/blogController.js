@@ -4,7 +4,7 @@ function index(req, res) {
     // res.send('Lista dei posts');
     // res.json(posts);
     // Errore Fake
-    kqkqkqkq;
+    // kqkqkqkq;
     
     let filteredPosts = posts;
     if(req.query.tag) {
